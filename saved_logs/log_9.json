@@ -1,0 +1,5 @@
+{
+  "user": "/rec",
+  "bot": "Please provide me with some context!  \"/rec\" by itself doesn't mean anything.  To help you, I need to know:\n\n* **What kind of recommendation are you looking for?**  (e.g., a movie, a book, a restaurant, a product, a song, a place to travel)\n* **What are your preferences?** (e.g., genre, style, price range, location)\n* **What is the context of \"/rec\"?** (e.g., is it a shorthand you use, part of a larger message, from a specific app or website?)\n\nThe more information you give me, the better I can assist you.\n",
+  "cid": null
+}

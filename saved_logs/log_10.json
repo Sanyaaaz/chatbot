@@ -1,0 +1,5 @@
+{
+  "user": "/rec",
+  "bot": "Please provide me with some context!  \"/rec\" is too vague.  To give you a helpful response, tell me:\n\n* **What kind of recommendation are you looking for?**  (e.g., a movie, a book, a restaurant, a product, a song, a place to travel)\n* **What are your preferences?** (e.g., genres, styles, price range, location)\n* **What are you looking for specifically?** (e.g., something to relax to, something exciting, something educational)\n\nThe more information you give me, the better I can help!\n",
+  "cid": null
+}
