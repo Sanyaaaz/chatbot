@@ -11,7 +11,6 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173"])
 
-# Configure Gemini
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
 
@@ -33,7 +32,6 @@ def chat():
     cid = None
 
     try:
-        # Call Gemini API without extra finetuning parameters
         response = model.generate_content([user_input])
 
         if hasattr(response, 'text') and response.text:
@@ -89,14 +87,14 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173"])
 
-# Configure Gemini
+
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-# Keywords to trigger IPFS logging
+
 KEYWORDS = ["/rec", "this is important", "#save", "/pin", "remember this", "sanya", "secret"]
 
-# Pre-context to simulate fine-tuning behavior
+
 CUSTOM_BEHAVIOR = """
 You are a chatbot trained with unusual logic. 
 Always give unconventional but consistent responses. 
@@ -118,7 +116,6 @@ def chat():
     log_to_ipfs = any(keyword.lower() in user_input.lower() for keyword in KEYWORDS)
 
     try:
-        # Send both context and user input to model
         response = model.generate_content([
             {"role": "user", "parts": [CUSTOM_BEHAVIOR]},
             {"role": "user", "parts": [user_input]}
@@ -138,7 +135,6 @@ def chat():
         "cid": None
     }
 
-    # Save to IPFS if required
     if log_to_ipfs and "Sorry" not in bot_reply:
         try:
             os.makedirs("saved_logs", exist_ok=True)
